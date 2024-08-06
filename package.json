@@ -1,6 +1,6 @@
 {
   "name": "cardcrafter-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate basic decks of cards, shuffle cards and deal cards",
   "main": "dist/index.js",
   "scripts": {

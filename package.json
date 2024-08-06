@@ -1,0 +1,19 @@
+{
+  "name": "cardcrafter-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "exit 0",
+    "build": "tsc --build tsconfig.json"
+  },
+  "author": "Lucas Roberts",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/Lucatorzze/CardCrafter.js.git"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "typescript": "^5.5.4"
+  }
+}

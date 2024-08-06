@@ -1,43 +1,43 @@
 # CardCrafter.js
 
-CardCrafter.js est un package JavaScript pour créer et manipuler des jeux de cartes. Elle permet de générer des jeux de cartes, de mélanger les cartes et de distribuer les cartes.
+CardCrafter.js is a JavaScript package for creating and manipulating card games. It allows you to generate decks of cards, shuffle cards and deal cards
 
 ## Installation
 
-Vous pouvez installer CardCrafter.js via npm :
+You can install CardCrafter.js via :
 
 ```bash
-npm install cardcrafter.js
+npm i --save cardcrafter-js
 ```
 
-## Utilisation
-Voici un exemple de base pour utiliser CardCrafter.js :
+## Example
+Here is a basic example for using CardCrafter.js :
 
 ```javascript
-import { Deck } from 'cardcrafter.js';
+import { Deck } from 'cardcrafter-js';
 
-// Créer un nouveau jeu de cartes
+// Create a new deck
 const deck = new Deck();
 
-// Mélanger le jeu de cartes
+// Shuffle the deck
 deck.shuffleDeck();
 
-// Distribuer une carte
+// Deal a card
 const card = deck.drawCard();
 console.log(`Vous avez tiré : ${card.value} de ${card.suit}`);
 ```
 
 ## API
 ### Deck
-- `new Deck()`: Crée un nouveau jeu de cartes.
-- `deck.shuffleDeck()`: Mélange le jeu de cartes.
-- `deck.drawCard()`: Tire une carte du dessus du jeu.
+- `new Deck()`: Creates a new deck.
+- `deck.shuffleDeck()`: Shuffles the deck.
+- `deck.drawCard()`: Draws a card from the top of the deck.
 
 ### Card
-- `card.value`: La valeur de la carte (par exemple, "2", "3", "JACK", "QUEEN", "KING", "ACE").
-- `card.suit`: La couleur de la carte (par exemple, "HEARTS", "DIAMONDS", "CLUBS", "SPADES").
-### Contribuer
-Les contributions sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
+- `card.value`: The value of the card (for example, "2", "3", "JACK", "QUEEN", "KING", "ACE").
+- `card.suit`: The color of the card (for example, "HEARTS", "DIAMONDS", "CLUBS", "SPADES").
+### Contribute
+Contributions are welcome! Please submit a pull request or open an issue to discuss the changes you would like to make.
 
 ## Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+This project is under the MIT license. See the LICENSE file for details.

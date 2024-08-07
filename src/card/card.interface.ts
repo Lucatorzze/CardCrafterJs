@@ -2,7 +2,9 @@ export enum CARD_SUIT {
     CLUB = "CLUB",
     DIAMOND = "DIAMOND",
     HEART = "HEART",
-    SPADE = "SPADE"
+    SPADE = "SPADE",
+    RED = "RED",
+    BLACK = "BLACK"
 }
 
 export enum CARD_VALUE {
@@ -18,5 +20,6 @@ export enum CARD_VALUE {
     JACK = "JACK",
     QUEEN = "QUEEN",
     KING = "KING",
-    ACE = "ACE"
+    ACE = "ACE",
+    JOKER = "JOKER"
 }

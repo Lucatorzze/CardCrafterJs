@@ -1,5 +1,7 @@
 import Card from "../card";
 import { Suits, Values } from "../card/card.constant";
+import { CARD_SUIT, CARD_VALUE } from "../card/card.interface";
+import { DeckOptions } from "./deck.interface";
 
 /**
  * Represents a deck of playing cards.
@@ -8,16 +10,16 @@ export default class Deck {
     private deck: Card[] = [];
     private drawCards: Card[] = [];
 
+
     /**
-     * Creates a new instance of the Deck class.
-     * @param deck - An optional array of cards to initialize the deck with.
+     * Represents a deck of cards.
+     * @constructor
+     * @param options - The options for initializing the deck.
+     * @param options.deck - The deck of cards to use.
+     * @param options.withJokers - Whether to include jokers in the deck. Default is false.
      */
-    constructor(deck?: Card[]) {
-        if (deck) {
-            this.deck = deck;
-        } else {
-            this.initDeck().getDeck()
-        }
+    constructor(options?: DeckOptions) {
+        this.initDeck(options)
     }
 
     /**
@@ -28,17 +30,29 @@ export default class Deck {
         return this.deck;
     }
 
+
     /**
-     * Initializes the deck with a standard set of playing cards.
-     * @returns The current instance of the Deck class.
+     * Initializes the deck with the specified options or creates a new deck if no options are provided.
+     * @param options - The options to initialize the deck with.
+     * @param options.deck - The deck of cards to use.
+     * @param options.withJokers - Whether to include jokers in the deck. Default is false.
+     * @returns The initialized deck.
      */
-    public initDeck() {
+    private initDeck(options?: DeckOptions): Deck {
+        if (options && options.deck) {
+            this.deck = options.deck;
+            return this;
+        }
         const deck: Card[] = [];
         for (let i = 0; i < Suits.length; i++) {
             for (let x = 0; x < Values.length; x++) {
                 const card: Card = new Card(Suits[i], Values[x]);
                 deck.push(card);
             }
+        }
+        if (options && options.withJokers) {
+            deck.push(new Card(CARD_SUIT.RED, CARD_VALUE.JOKER));
+            deck.push(new Card(CARD_SUIT.BLACK, CARD_VALUE.JOKER));
         }
         this.deck = deck;
         return this;
@@ -49,8 +63,7 @@ export default class Deck {
      * @returns The current instance of the Deck class.
      */
     public resetDeck() {
-        this.initDeck();
-        return this;
+        return this.initDeck();
     }
 
     /**

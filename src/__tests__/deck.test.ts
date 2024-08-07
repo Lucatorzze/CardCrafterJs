@@ -48,7 +48,14 @@ describe("Deck", () => {
             deck.drawCard();
         }
         expect(deck.getDeck().length).toBe(32); 0
-        const newDeck = new Deck(deck.getDeck());
+        const newDeck = new Deck({ deck: deck.getDeck() });
         expect(newDeck.getDeck().length).toBe(32);
+    });
+
+    it("Generate new Deck with Jokers", () => {
+        const deck = new Deck({ withJokers: true });
+        expect(deck.getDeck().length).toBe(54);
+        const uniqueCards = new Set(deck.getDeck());
+        expect(uniqueCards.size).toBe(54);
     });
 });

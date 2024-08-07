@@ -74,8 +74,8 @@ const deck = new Deck({withJokers: true});
 ## API
 ### Card
 - `new Card()`: Creates a new card.
-- `Card.suit`: Get suit of the card.
-- `Card.value`: Get value of the card 
+- `Card.value`: The value of the card (for example, "2", "3", "JACK", "QUEEN", "KING", "ACE").
+- `Card.suit`: The color of the card (for example, "HEART", "DIAMOND", "CLUB", "SPADE").
 
 #### Énumérations
 ##### CARD_SUIT
@@ -112,10 +112,6 @@ const deck = new Deck({withJokers: true});
 - `deck.shuffleDeck()`: Shuffles the deck.
 - `deck.drawCard()`: Draws a card from the top of the deck.
 - `deck.resetDeck()`: Resets the deck
-
-### Card
-- `card.value`: The value of the card (for example, "2", "3", "JACK", "QUEEN", "KING", "ACE").
-- `card.suit`: The color of the card (for example, "HEART", "DIAMOND", "CLUB", "SPADE").
 
 ## Tests
 Run all tests: `npm run test`

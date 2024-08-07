@@ -1,10 +1,17 @@
-import { Suits, Values } from "./deck.constant";
-import { Card } from "./deck.interface";
+import Card from "../card";
+import { Suits, Values } from "../card/card.constant";
 
+/**
+ * Represents a deck of playing cards.
+ */
 export default class Deck {
     private deck: Card[] = [];
     private drawCards: Card[] = [];
 
+    /**
+     * Creates a new instance of the Deck class.
+     * @param deck - An optional array of cards to initialize the deck with.
+     */
     constructor(deck?: Card[]) {
         if (deck) {
             this.deck = deck;
@@ -17,7 +24,7 @@ export default class Deck {
      * Retrieves the deck of cards.
      * @returns {Card[]} The deck of cards.
      */
-    public getDeck() {
+    public getDeck(): Card[] {
         return this.deck;
     }
 
@@ -29,11 +36,20 @@ export default class Deck {
         const deck: Card[] = [];
         for (let i = 0; i < Suits.length; i++) {
             for (let x = 0; x < Values.length; x++) {
-                const card: Card = { value: Values[x], suit: Suits[i] };
+                const card: Card = new Card(Suits[i], Values[x]);
                 deck.push(card);
             }
         }
         this.deck = deck;
+        return this;
+    }
+
+    /**
+     * Resets the deck by reinitializing it with a standard set of playing cards.
+     * @returns The current instance of the Deck class.
+     */
+    public resetDeck() {
+        this.initDeck();
         return this;
     }
 
@@ -57,9 +73,9 @@ export default class Deck {
 
     /**
      * Draws a card from the deck and adds it to the drawCards array.
-     * @returns The card that was drawn from the deck, or undefined if the deck is empty.
+     * @returns {Card | undefined} The card that was drawn from the deck, or undefined if the deck is empty.
      */
-    public drawCard() {
+    public drawCard(): Card | undefined {
         const card = this.deck.shift();
         if (card) {
             this.drawCards.push(card);

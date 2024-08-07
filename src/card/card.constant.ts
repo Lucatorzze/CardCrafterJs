@@ -1,0 +1,23 @@
+import { CARD_SUIT, CARD_VALUE } from "./card.interface";
+
+export const Suits: CARD_SUIT[] = [
+    CARD_SUIT.SPADE,
+    CARD_SUIT.DIAMOND,
+    CARD_SUIT.CLUB,
+    CARD_SUIT.HEART
+];
+export const Values: CARD_VALUE[] = [
+    CARD_VALUE.TWO,
+    CARD_VALUE.THREE,
+    CARD_VALUE.FOUR,
+    CARD_VALUE.FIVE,
+    CARD_VALUE.SIX,
+    CARD_VALUE.SEVEN,
+    CARD_VALUE.EIGHT,
+    CARD_VALUE.NINE,
+    CARD_VALUE.TEN,
+    CARD_VALUE.JACK,
+    CARD_VALUE.QUEEN,
+    CARD_VALUE.KING,
+    CARD_VALUE.ACE
+];
